@@ -1,3 +1,5 @@
 .DS_Store
+*.pyc
 _venv
+.ipynb_checkpoints/
 data/identified-people.json

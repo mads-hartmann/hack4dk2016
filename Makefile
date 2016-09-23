@@ -13,8 +13,10 @@ endif
 venv := _venv
 pip := $(venv)/bin/pip
 python := $(venv)/bin/python
+ipython := $(venv)/bin/ipython2
+jupyter-notebook := $(venv)/bin/jupyter-notebook
 
-setup_files := $(venv)/.made
+setup_files := $(venv)/.installed
 data_files := data/identified-people.json
 
 #
@@ -23,6 +25,9 @@ data_files := data/identified-people.json
 
 setup: $(setup_files)
 data: setup $(data_files)
+run: data; PYTHONPATH=src $(python) src/web/main.py
+console: data; PYTHONPATH=src $(ipython)
+notebook: data; PYTHONPATH=$(PWD)/src $(jupyter-notebook) notebook/data.ipynb
 
 #
 # Rules
@@ -40,6 +45,6 @@ $(venv)/.made:
 	$(pip) install pip==7.1.2 setuptools==18.2
 	touch $@
 
-$(venv)/.installed: $(venv)/.made backerequirements.txt
+$(venv)/.installed: $(venv)/.made requirements.txt
 	$(pip) install -r requirements.txt
 	touch $@
