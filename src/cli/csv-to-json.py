@@ -12,6 +12,7 @@ def convert(input_file, output_file):
     jsonfile = open(output_file, 'w')
 
     fieldnames = (
+        "Date",
         "Billednummer",
         "Fornavn",
         "Efternavn",
@@ -55,4 +56,3 @@ if __name__ == "__main__":
     parser.add_argument('--output', help='JSON file to write to', type=str)
     args = parser.parse_args()
     convert(args.input, args.output)
-
