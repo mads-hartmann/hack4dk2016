@@ -36,17 +36,17 @@ def convert(input_file, output_file):
 
     reader = csv.DictReader(csvfile, fieldnames)
 
-    jsonfile.write('{ "data": [\n')
-    for row in list(reader)[1:-1]:
-        cleaned_obj = {
+    data = [
+        {
             k: v.replace('"','').strip().replace('\n','')
-            for k,v in row.iteritems()
+            for k, v in row.iteritems()
             if k is not None
         }
-        jsonfile.write(json.dumps(cleaned_obj).decode('unicode-escape').encode('utf8'))
-        jsonfile.write(',\n')
+        for row in list(reader)[1:-1]
+    ]
 
-    jsonfile.write('}]\n')
+    lines = [json.dumps(o).decode('unicode-escape').encode('utf8') for o in data]
+    jsonfile.write('{ "data": [\n ' +   ',\n'.join(lines)    + ' ]}')
 
 
 if __name__ == "__main__":
