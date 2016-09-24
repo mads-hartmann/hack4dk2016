@@ -39,7 +39,7 @@ y_top_margin = 40
 y_bottom_margin = 15
 for (x, y, w, h) in faces:
     # Writing code that take the centermost rectangles
-    dist = math.sqrt( (x-img_x0)^2+(y-img_y0)^2)
+    dist = math.sqrt( (x-img_x0)^2+(y-img_y0)^2 )
     if (y>y_min-y_top_margin) and (y<y_min+y_bottom_margin):
         # Setting up the cropping
         x1 = x-50
