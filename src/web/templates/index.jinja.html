@@ -8,7 +8,7 @@
     <h1>Hello World</h1>
     <ul>
       {% for picture in pictures %}
-      <li>{{picture.first_name}}</li>
+      <li><a href="/{{picture.picture_id}}">{{picture.first_name}}<a></li>
       {% endfor %}
     </ul>
   </body>
