@@ -28,6 +28,7 @@ data: setup $(data_files)
 run: data; PYTHONPATH=src $(python) src/web/main.py
 console: data; PYTHONPATH=src $(ipython)
 notebook: data; PYTHONPATH=$(PWD)/src $(jupyter-notebook) notebook/data.ipynb
+db_import: ; PYTHONPATH=$(PWD)/src $(python) src/cli/csv_to_db.py --input data/identified-people.csv
 
 #
 # Rules
@@ -36,13 +37,13 @@ notebook: data; PYTHONPATH=$(PWD)/src $(jupyter-notebook) notebook/data.ipynb
 #
 # Data
 data/identified-people.json: data/identified-people.csv
-	$(python) src/cli/csv-to-json.py --input $< --output $@
+	$(python) src/cli/csv_to_json.py --input $< --output $@
 
 #
 # Setup
 $(venv)/.made:
 	virtualenv -q --no-site-packages -p python2.7 $(venv)
-	$(pip) install pip==7.1.2 setuptools==18.2
+	$(pip) install pip==8.1.2 setuptools==18.2
 	touch $@
 
 $(venv)/.installed: $(venv)/.made requirements.txt

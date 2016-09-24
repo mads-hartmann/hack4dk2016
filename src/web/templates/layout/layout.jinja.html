@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/css/index.css" type="text/css" media="screen" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li class="icon"><a href="/">Faces of the Past</a></li>
+                    <li><a href="/lastnames">Last Names</a></li>
+                    <li><a href="/firstnames">First Names</a></li>
+                    <li><a href="#">Age</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h1>{% block heading %}{% endblock %}</h1>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <small>
+                This project was created by XXX while attending YYY in
+                Copenhagen from the 23th to 25th of September 2016.
+                <br />
+                You can find the code and more information about the
+                project over on github.com/mads379/ZZZ
+            </small>
+        </footer>
+    </body>
+</html>

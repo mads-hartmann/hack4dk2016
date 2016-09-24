@@ -4,3 +4,4 @@ uWSGI==2.0.11.2
 requests==2.7.0
 ipython
 jupyter
+http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.2.1.zip

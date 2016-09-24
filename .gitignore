@@ -1,5 +1,7 @@
 .DS_Store
 *.pyc
 _venv
-.ipynb_checkpoints/
+notebook/.ipynb_checkpoints
 data/identified-people.json
+static/images
+.tern-port

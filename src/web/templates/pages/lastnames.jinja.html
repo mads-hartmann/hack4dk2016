@@ -1,0 +1,15 @@
+{% extends "layout/layout.jinja.html" %}
+{% block title %}Hack4dk 2016 - Browse by Lastname{% endblock %}
+{% block heading %}Browse by Lastname{% endblock %}
+
+{% block content %}
+<section class="name-list">
+    {% for (last_name, count) in lastnames %}
+    <div class="name">
+        <a href="/lastnames/{{last_name}}">
+            {{last_name}} <span class="count">{{count}}</span>
+        </a>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

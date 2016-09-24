@@ -1,0 +1,22 @@
+{% extends "layout/layout.jinja.html" %}
+
+{% block title %}Hack4dk 2016{% endblock %}
+
+{% block content %}
+<p class="intro">This project was created by XXX while attending YYY in Copenhagen from
+    the 23th to 25th of September 2016. You can find the code and
+    more information about the project over on
+    github.com/mads379/ZZZ
+</p>
+<section class="image-list">
+    <ul>
+        {% for picture in pictures %}
+        <li>
+            <a href="/picture/{{picture.picture_id}}">
+                <img src="{{picture.image_url}}" />
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

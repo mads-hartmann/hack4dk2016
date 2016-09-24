@@ -1,0 +1,17 @@
+{% extends "layout/layout.jinja.html" %}
+{% block title %}Hack4dk 2016 - {{last_name}}{% endblock %}
+{% block heading %}{{last_name}}{% endblock %}
+
+{% block content %}
+<section class="name-list">
+    {% for person in people %}
+    <div class="image">
+        <p>{{person.first_name}}</p>
+        <a href="/picture/{{person.picture_id}}">
+            <img src="{{person.image_url}}" />
+        </a>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
+
