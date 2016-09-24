@@ -24,7 +24,7 @@ def convert(input_file, output_file):
         "Faders navn",
         "Moders navn",
         "Gift med",
-        "Børn",
+        "Born",
         "Bemærkninger",
         "Fødested",
         "Dødssted",

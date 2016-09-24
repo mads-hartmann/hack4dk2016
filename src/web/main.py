@@ -11,7 +11,7 @@ app.pictures = data.load_from_json()
 @app.route('/', methods=['GET'])
 def colors_page():
     return render_template(
-        'index.jinja.html', pictures=app.pictures[0:100])
+        'index.jinja.html', pictures=app.pictures[0:10])
 
 
 if __name__ == '__main__':
